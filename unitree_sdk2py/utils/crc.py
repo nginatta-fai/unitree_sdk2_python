@@ -179,8 +179,9 @@ class CRC(Singleton):
         return calcData
 
     def __Crc32(self, data):
-        return crc32.mpeg_2(words_to_bytes(data))
+        return crc32.mpeg_2(self.words_to_bytes(data))
 
+    @staticmethod
     def words_to_bytes(data):
         """
         Convert a list of 32-bit integers (data[i]) into bytes,
